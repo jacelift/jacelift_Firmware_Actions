@@ -109,6 +109,7 @@ rm -rf target/linux/ar71xx/files/arch/mips/ath79/machtypes.h
 rm -rf target/linux/ar71xx/config-4.9
 rm -rf target/linux/ar71xx/config-4.14
 rm -rf target/linux/ar71xx/generic/config-default
+rm -rf package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # 5.2 拷贝TL-AP300C-POE-V1相关文件：12个
 cp -f files/lede17.01/TL-AP300C-POE-V1/diag.sh target/linux/ar71xx/base-files/etc/diag.sh
@@ -123,6 +124,7 @@ cp -f files/lede17.01/TL-AP300C-POE-V1/mach-tl-ap300c-poe-v1.c target/linux/ar71
 cp -f files/lede17.01/TL-AP300C-POE-V1/config-4.9 target/linux/ar71xx/config-4.9
 cp -f files/lede17.01/TL-AP300C-POE-V1/config-4.14 target/linux/ar71xx/config-4.14
 cp -f files/lede17.01/TL-AP300C-POE-V1/config-default target/linux/ar71xx/generic/config-default
+cp -f files/lede17.01/TL-AP300C-POE-V1/mac80211.sh package/kernel/mac80211/files/lib/wifi/mac80211.sh
 # ===========End 添加TL-AP300C-POE-V1机型到lede17.01源码2022.8.9======================
 
 
