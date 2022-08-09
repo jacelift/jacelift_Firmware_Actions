@@ -95,11 +95,44 @@ cp -f files/lede17.01/RX_WT600/mt7621_RX_WT600.dts target/linux/ramips/dts/mt762
 
 
 
+# 【5】===========Start 添加TL-AP300C-POE-V1机型到lede17.01源码2022.8.9===============
+# 参考OMY-X1机型。
+# 5.1 删除原有文件：11个
+rm -rf target/linux/ar71xx/base-files/etc/diag.sh
+rm -rf target/linux/ar71xx/base-files/etc/board.d/01_leds
+rm -rf target/linux/ar71xx/base-files/lib/ar71xx.sh
+rm -rf target/linux/ar71xx/base-files/lib/upgrade/platform.sh
+rm -rf target/linux/ar71xx/image/generic.mk
+rm -rf target/linux/ar71xx/files/arch/mips/ath79/Kconfig.openwrt
+rm -rf target/linux/ar71xx/files/arch/mips/ath79/Makefile
+rm -rf target/linux/ar71xx/files/arch/mips/ath79/machtypes.h
+rm -rf target/linux/ar71xx/config-4.9
+rm -rf target/linux/ar71xx/config-4.14
+rm -rf target/linux/ar71xx/generic/config-default
+
+# 5.2 拷贝TL-AP300C-POE-V1相关文件：12个
+cp -f files/lede17.01/TL-AP300C-POE-V1/diag.sh target/linux/ar71xx/base-files/etc/diag.sh
+cp -f files/lede17.01/TL-AP300C-POE-V1/01_leds target/linux/ar71xx/base-files/etc/board.d/01_leds
+cp -f files/lede17.01/TL-AP300C-POE-V1/ar71xx.sh target/linux/ar71xx/base-files/lib/ar71xx.sh
+cp -f files/lede17.01/TL-AP300C-POE-V1/platform.sh target/linux/ar71xx/base-files/lib/upgrade/platform.sh
+cp -f files/lede17.01/TL-AP300C-POE-V1/generic.mk target/linux/ar71xx/image/generic.mk
+cp -f files/lede17.01/TL-AP300C-POE-V1/Kconfig.openwrt target/linux/ar71xx/files/arch/mips/ath79/Kconfig.openwrt
+cp -f files/lede17.01/TL-AP300C-POE-V1/Makefile target/linux/ar71xx/files/arch/mips/ath79/Makefile
+cp -f files/lede17.01/TL-AP300C-POE-V1/machtypes.h target/linux/ar71xx/files/arch/mips/ath79/machtypes.h
+cp -f files/lede17.01/TL-AP300C-POE-V1/mach-tl-ap300c-poe-v1.c target/linux/ar71xx/files/arch/mips/ath79/mach-tl-ap300c-poe-v1.c
+cp -f files/lede17.01/TL-AP300C-POE-V1/config-4.9 target/linux/ar71xx/config-4.9
+cp -f files/lede17.01/TL-AP300C-POE-V1/config-4.14 target/linux/ar71xx/config-4.14
+cp -f files/lede17.01/TL-AP300C-POE-V1/config-default target/linux/ar71xx/generic/config-default
+# ===========End 添加TL-AP300C-POE-V1机型到lede17.01源码2022.8.9======================
+
+
+
 
 #【99】更改openwrt的主机名，Modify hostname
 #sed -i 's/OpenWrt/TL-WDR5800-V1/g' package/base-files/files/bin/config_generate
 #sed -i 's/OpenWrt/ZTE_E8822/g' package/base-files/files/bin/config_generate
-sed -i 's/OpenWrt/RX_WT600/g' package/base-files/files/bin/config_generate
+#sed -i 's/OpenWrt/RX_WT600/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/TL-AP300C-POE-V1/g' package/base-files/files/bin/config_generate
 
 #【100】删除files目录
 rm -r files
