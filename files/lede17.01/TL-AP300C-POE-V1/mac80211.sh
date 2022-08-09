@@ -84,9 +84,9 @@ detect_mac80211() {
 		iw phy "$dev" info | grep -q 'Capabilities:' && htmode=HT20
 
 		iw phy "$dev" info | grep -q '5180 MHz' && {
-			mode_band="a"
-			channel="36"
-			iw phy "$dev" info | grep -q 'VHT Capabilities' && htmode="VHT80"
+			mode_band="g"
+			channel="11"
+			iw phy "$dev" info | grep -q 'VHT Capabilities' && htmode="HT20"
 		}
 
 		[ -n "$htmode" ] && ht_capab="set wireless.radio${devidx}.htmode=$htmode"
@@ -110,7 +110,7 @@ detect_mac80211() {
 			set wireless.radio${devidx}=wifi-device
 			set wireless.radio${devidx}.type=mac80211
 			set wireless.radio${devidx}.channel=${channel}
-			set wireless.radio${devidx}.hwmode=11g
+			set wireless.radio${devidx}.hwmode=11${mode_band}
 			${dev_id}
 			${ht_capab}
 			set wireless.radio${devidx}.disabled=0
