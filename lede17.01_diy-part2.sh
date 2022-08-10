@@ -140,7 +140,7 @@ sed -i 's/OpenWrt/TL-AP300C-POE-V1/g' package/base-files/files/bin/config_genera
 sed -i 's/ssid=OpenWrt/ssid=AP300C-POE-V1/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 #【100】删除files目录
-rm -r files
+rm -rf files
 
 
 
