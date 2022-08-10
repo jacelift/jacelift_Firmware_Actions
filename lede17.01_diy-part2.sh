@@ -97,7 +97,7 @@ cp -f files/lede17.01/RX_WT600/mt7621_RX_WT600.dts target/linux/ramips/dts/mt762
 
 # 【5】===========Start 添加TL-AP300C-POE-V1机型到lede17.01源码2022.8.9===============
 # 参考OMY-X1机型。
-# 5.1 删除原有文件：12个
+# 5.1 删除原有文件：11个
 rm -rf target/linux/ar71xx/base-files/etc/diag.sh
 rm -rf target/linux/ar71xx/base-files/etc/board.d/01_leds
 rm -rf target/linux/ar71xx/base-files/lib/ar71xx.sh
@@ -111,7 +111,7 @@ rm -rf target/linux/ar71xx/config-4.14
 rm -rf target/linux/ar71xx/generic/config-default
 #rm -rf package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
-# 5.2 拷贝TL-AP300C-POE-V1相关文件：13个
+# 5.2 拷贝TL-AP300C-POE-V1相关文件：12个
 cp -f files/lede17.01/TL-AP300C-POE-V1/diag.sh target/linux/ar71xx/base-files/etc/diag.sh
 cp -f files/lede17.01/TL-AP300C-POE-V1/01_leds target/linux/ar71xx/base-files/etc/board.d/01_leds
 cp -f files/lede17.01/TL-AP300C-POE-V1/ar71xx.sh target/linux/ar71xx/base-files/lib/ar71xx.sh
