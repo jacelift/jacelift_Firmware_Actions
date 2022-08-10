@@ -109,7 +109,7 @@ rm -rf target/linux/ar71xx/files/arch/mips/ath79/machtypes.h
 rm -rf target/linux/ar71xx/config-4.9
 rm -rf target/linux/ar71xx/config-4.14
 rm -rf target/linux/ar71xx/generic/config-default
-rm -rf package/kernel/mac80211/files/lib/wifi/mac80211.sh
+#rm -rf package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # 5.2 拷贝TL-AP300C-POE-V1相关文件：13个
 cp -f files/lede17.01/TL-AP300C-POE-V1/diag.sh target/linux/ar71xx/base-files/etc/diag.sh
@@ -124,17 +124,20 @@ cp -f files/lede17.01/TL-AP300C-POE-V1/mach-tl-ap300c-poe-v1.c target/linux/ar71
 cp -f files/lede17.01/TL-AP300C-POE-V1/config-4.9 target/linux/ar71xx/config-4.9
 cp -f files/lede17.01/TL-AP300C-POE-V1/config-4.14 target/linux/ar71xx/config-4.14
 cp -f files/lede17.01/TL-AP300C-POE-V1/config-default target/linux/ar71xx/generic/config-default
-cp -f files/lede17.01/TL-AP300C-POE-V1/mac80211.sh package/kernel/mac80211/files/lib/wifi/mac80211.sh
+#cp -f files/lede17.01/TL-AP300C-POE-V1/mac80211.sh package/kernel/mac80211/files/lib/wifi/mac80211.sh
 # ===========End 添加TL-AP300C-POE-V1机型到lede17.01源码2022.8.9======================
 
 
 
 
-#【99】更改openwrt的主机名，Modify hostname
+#【98】更改openwrt的主机名，Modify hostname
 #sed -i 's/OpenWrt/TL-WDR5800-V1/g' package/base-files/files/bin/config_generate
 #sed -i 's/OpenWrt/ZTE_E8822/g' package/base-files/files/bin/config_generate
 #sed -i 's/OpenWrt/RX_WT600/g' package/base-files/files/bin/config_generate
 sed -i 's/OpenWrt/TL-AP300C-POE-V1/g' package/base-files/files/bin/config_generate
+
+【99】更改开源驱动的WiFi名称（ssid）
+sed -i 's/ssid=OpenWrt/ssid=AP300C-POE-V1/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 #【100】删除files目录
 rm -r files
