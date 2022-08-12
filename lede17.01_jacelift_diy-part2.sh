@@ -13,8 +13,6 @@
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 
-#【01】删除文件
-rm -rf target/linux/ath79/image/tiny-tp-link.mk
 
 # 【02】设置权限
 chmod 755 -R files/*
@@ -27,18 +25,17 @@ chmod 755 -R files/*
 
 
 
-#【97】test
-cp -f files/lede17.01/test/tiny-tp-link.mk target/linux/ath79/image/tiny-tp-link.mk
-touch target/linux/ath79/image/tiny-tp-link.mk
-
-#【98】更改openwrt的主机名，Modify hostname
+#【97】更改openwrt的主机名，Modify hostname
 #sed -i 's/OpenWrt/TL-WDR5800-V1/g' package/base-files/files/bin/config_generate
 #sed -i 's/OpenWrt/RX_WT600/g' package/base-files/files/bin/config_generate
 #sed -i 's/OpenWrt/NETGEAR_WNDR4300-V1/g' package/base-files/files/bin/config_generate
 sed -i 's/OpenWrt/TL-AP300C-POE-V1/g' package/base-files/files/bin/config_generate
 
+【98】更改开源驱动的WiFi名称（ssid）
+sed -i 's/ssid=OpenWrt/ssid=AP300C-POE-V1/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+
 #【99】删除files目录
-rm -r files
+rm -rf files
 
 
 
