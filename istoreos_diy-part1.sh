@@ -20,3 +20,5 @@
 #echo '#src-git helloworld https://github.com/fw876/helloworld' >> feeds.conf.default
 #echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >> feeds.conf.default
 #echo 'src-git small https://github.com/kenzok8/small' >> feeds.conf.default
+#添加设备meson
+svn co https://github.com/coolsnowwolf/lede/trunk/target/linux/meson target/linux/meson
