@@ -27,15 +27,15 @@
 chmod 755 -R files/*
 
 # 【3.1】删除原有文件3个
-rm -rf target/linux/ramips/mt7621/base-files/etc/board.d/01_leds
-rm -rf target/linux/ramips/mt7621/base-files/etc/board.d/02_network
-rm -rf target/linux/ramips/image/mt7621.mk
+#rm -rf target/linux/ramips/mt7621/base-files/etc/board.d/01_leds
+#rm -rf target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+#rm -rf target/linux/ramips/image/mt7621.mk
 
 # 【3.2】拷贝ZTE_E8822相关文件4个
-cp -f files/lede/ZTE_E8822/01_leds target/linux/ramips/mt7621/base-files/etc/board.d/01_leds
-cp -f files/lede/ZTE_E8822/02_network target/linux/ramips/mt7621/base-files/etc/board.d/02_network
-cp -f files/lede/ZTE_E8822/mt7621.mk target/linux/ramips/image/mt7621.mk
-cp -f files/lede/ZTE_E8822/mt7621_ZTE_E8822.dts target/linux/ramips/dts/mt7621_ZTE_E8822.dts
+#cp -f files/lede/ZTE_E8822/01_leds target/linux/ramips/mt7621/base-files/etc/board.d/01_leds
+#cp -f files/lede/ZTE_E8822/02_network target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+#cp -f files/lede/ZTE_E8822/mt7621.mk target/linux/ramips/image/mt7621.mk
+#cp -f files/lede/ZTE_E8822/mt7621_ZTE_E8822.dts target/linux/ramips/dts/mt7621_ZTE_E8822.dts
 # 【3】===========END 添加ZTE_E8822机型到lede源码（不依赖luci-app-mt-wifi）2022.7.6===============
 
 
@@ -46,7 +46,7 @@ cp -f files/lede/ZTE_E8822/mt7621_ZTE_E8822.dts target/linux/ramips/dts/mt7621_Z
 #【99】更改openwrt的主机名，Modify hostname
 #sed -i 's/OpenWrt/RX_WT600/g' package/base-files/files/bin/config_generate
 #sed -i 's/OpenWrt/ZTE_E8822/g' package/base-files/files/bin/config_generate
-sed -i 's/OpenWrt/OneCloud/g' package/base-files/files/bin/config_generate
+#sed -i 's/OpenWrt/OneCloud/g' package/base-files/files/bin/config_generate
 
 
 #【100】删除files目录
