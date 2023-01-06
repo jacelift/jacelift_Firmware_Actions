@@ -1,3 +1,9 @@
+github-actions云编译，文件包含:
+xxx_feeds.conf.default
+xxx.config
+xxx_diy-part1.sh
+xxx_diy-part2.sh
+
 RX_WT-600配置： 
 ```
 【cpu】：MediaTek MT7621AT
