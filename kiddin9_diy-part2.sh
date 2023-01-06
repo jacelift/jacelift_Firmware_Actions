@@ -9,8 +9,8 @@
 # File name: diy-part2.sh
 # Description: OpenWrt DIY script part 2 (After Update and Install feeds)
 #
-scripts/feeds install -a -p kiddin9 -f
-scripts/feeds install -a
+./scripts/feeds install -a -p kiddin9 -f
+./scripts/feeds install -a
 
 # 【1】修改默认IP地址，Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
