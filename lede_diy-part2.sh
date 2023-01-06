@@ -46,7 +46,7 @@ cp -f files/lede/ZTE_E8822/mt7621_ZTE_E8822.dts target/linux/ramips/dts/mt7621_Z
 #【99】更改openwrt的主机名，Modify hostname
 #sed -i 's/OpenWrt/RX_WT600/g' package/base-files/files/bin/config_generate
 #sed -i 's/OpenWrt/ZTE_E8822/g' package/base-files/files/bin/config_generate
-sed -i 's/OpenWrt/OneCloud/g' package/base-files/files/bin/config_generate
+#sed -i 's/OpenWrt/OneCloud/g' package/base-files/files/bin/config_generate
 
 
 #【100】删除files目录
