@@ -22,3 +22,4 @@
 #echo 'src-git small https://github.com/kenzok8/small' >> feeds.conf.default
 #添加设备meson
 #svn co https://github.com/coolsnowwolf/lede/trunk/target/linux/meson target/linux/meson
+svn export https://github.com/kiddin9/OpenWrt_x86-r2s-r4s/trunk/devices openwrt/devices
